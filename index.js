@@ -142,7 +142,7 @@ app.post("/api/profiles", (req, res) => {
 
 		success(res, {
 			status: 200,
-			data: { addedUser: user },
+			data: { addedUser: JSON.parse(user) },
 		});
 	} else {
 		unauth(res, { status: 401, data: "Unauthorized to make this request." });
