@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+	<title>Falcon Servers | 404</title>
+</head>
+<body>
+	<h1>404</h1>
+	<p>Oops! Something went wrong.</p>
+<button class="button" cursor="link" onclick="window.location.href='/'">
+  <span>BACK TO HOME</span>
+</button>
+
+<div class="cursor"></div>
+
+	<style>
+		.button {
+	 --light: #fff;
+	 --dark: #414856;
+	 --border: #4a96ad;
+	 --background: #4f29f0;
+	 display: flex;
+	 font-family: 'Montserrat', sans-serif;
+	 align-items: center;
+	 justify-content: center;
+	 position: relative;
+	 border: 0;
+	 padding: 0 30px;
+	 width: auto;
+	 height: 60px;
+	 border-radius: 5px;
+	 border: 1px solid var(--border);
+	 background: none;
+	 color: #f2f2f2;
+	 cursor: pointer;
+	 outline: none;
+	 box-shadow: 0 10px 30px rgba(65, 72, 86, 0.1);
+	 transition: transform 0.1s linear, color 0.1s linear, background 0.15s linear;
+	 cursor: none;
+}
+ .button > span {
+	 display: inline-block;
+	 position: relative;
+	 z-index: 2;
+	 font: 400 16px 'Montserrat', sans-serif;
+	 transition: transform 0.15s linear;
+}
+ .button.fill {
+	 border: 0;
+	 color: var(--light);
+	 background: var(--background);
+}
+ .cursor {
+	 --cursor: #c3c8de;
+	 position: fixed;
+	 top: -50px;
+	 z-index: 99;
+	 width: 40px;
+	 height: 40px;
+	 border-radius: 50%;
+	 background: none;
+	 border: solid 2px var(--cursor);
+	 pointer-events: none;
+	 transition: transform 0.3s ease, background 0.3s ease, border-color 0.3s ease;
+}
+ [cursor="link"]:hover ~ .cursor {
+	 mix-blend-mode: difference;
+	 transform: scale(1.5);
+	 cursor: none;
+	 background: #fff;
+	 border-color: #fff;
+}
+ body {
+	 background: #1c1c1c;
+	 height: 100vh;
+	 font: 400 16px 'Montserrat', sans-serif;
+	 display: flex;
+	 flex-direction: column;
+	 justify-content: center;
+	 align-items: center;
+}
+ body .button {
+	 margin: 0 10px;
+}
+ body .socials {
+	 position: fixed;
+	 display: block;
+	 left: 20px;
+	 bottom: 20px;
+}
+ body .socials > a {
+	 display: block;
+	 width: 30px;
+	 opacity: 0.2;
+	 transform: scale(var(--scale, 0.8));
+	 transition: transform 0.3s cubic-bezier(0.38, -0.12, 0.24, 1.91);
+}
+ body .socials > a:hover {
+	 --scale: 1;
+}
+
+		h1 {
+			font-size: 8rem;
+			margin: 2.5vh;
+			line-height: 1;
+			text-shadow: 2px 2px 0 #00ffff, -2px -2px 0 #00ffff, 2px -2px 0 #00ffff, -2px 2px 0 #00ffff;
+		}
+
+		p {
+			font-size: 2rem;
+			margin: 5vh;
+			margin-top: 1rem;
+			font-weight: bold;
+			text-transform: uppercase;
+		}
+ 
+	</style>
+	<script>
+		// --- BUTTON
+const $ = (s, o = document) => o.querySelector(s);
+const $$ = (s, o = document) => o.querySelectorAll(s);
+
+$$('.button').forEach(el => el.addEventListener('mousemove', function(e) {
+  const pos = this.getBoundingClientRect();
+  const mx = e.clientX - pos.left - pos.width/2; 
+  const my = e.clientY - pos.top - pos.height/2;
+   
+  this.style.transform = 'translate('+ mx * 0.15 +'px, '+ my * 0.3 +'px)';
+  this.style.transform += 'rotate3d('+ mx * -0.1 +', '+ my * -0.3 +', 0, 12deg)';
+  this.children[0].style.transform = 'translate('+ mx * 0.025 +'px, '+ my * 0.075 +'px)';
+}));
+
+$$('.button').forEach(el => el.addEventListener('mouseleave', function() {
+  this.style.transform = 'translate3d(0px, 0px, 0px)';
+  this.style.transform += 'rotate3d(0, 0, 0, 0deg)';
+  this.children[0].style.transform = 'translate3d(0px, 0px, 0px)';
+}));
+
+// --- CURSOR
+document.addEventListener('mousemove', function(e) {
+  $('.cursor').style.left = (e.pageX - 25) + 'px';
+  $('.cursor').style.top = (e.pageY - 25) + 'px';
+});
+	</script>
+</body>
+</html>

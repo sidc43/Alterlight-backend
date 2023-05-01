@@ -1,0 +1,42 @@
+{
+  "files": {
+    "ipaddresses.json": [
+      {
+        "id": "26e5ae7f-bbf4-4512-82f6-f71920491c2c",
+        "line": 7,
+        "version": 105,
+        "index": 95
+      }
+    ],
+    "public/login.html": [
+      {
+        "id": "68b47032-654f-4a7a-b6e7-17f40074448f",
+        "line": 12,
+        "version": 813,
+        "index": 460
+      }
+    ],
+    "public/registration/index.html": [
+      {
+        "id": "688f3041-86d7-4086-9815-c450f664cea0",
+        "line": 1,
+        "version": 4654,
+        "index": 0
+      }
+    ],
+    "views/login.ejs": [
+      {
+        "id": "f8602a26-0c91-4a78-8dd9-e7c2a6efcfd5",
+        "line": 22,
+        "version": 203,
+        "index": 669
+      },
+      {
+        "id": "3bf7a998-d4bc-4740-a0ce-e97dbd068016",
+        "line": 28,
+        "version": 203,
+        "index": 754
+      }
+    ]
+  }
+}
