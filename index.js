@@ -1,4 +1,4 @@
-// Region Imports
+// #region Imports
 const express = require("express");
 const path = require("path");
 const { print, success, notfound, badreq, unauth } = require("./exports");
@@ -13,17 +13,17 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const fetch = require("node-fetch-commonjs");
 const fs = require("fs");
-// Endregion
+// #endregion
 
-// Region Server config
+// #region Server config
 dotenv.config();
 const app = express();
 const port = process.env.PORT || 3000;
 const APIKEY = process.env.APIKEY;
 logTime();
-// Endregion
+// #endregion
 
-// Redirect sensitive files to home page
+// #region Redirect sensitive files to home page
 app.get("/profiles.json", (req, res) => {
 	res.redirect(301, '/');
 });
@@ -51,8 +51,9 @@ app.get("/pages.js", (req, res) => {
 app.get("/404.html", (req, res) => {
 	res.redirect(301, '/');
 });
+// #endregion
 
-// Region Middleware
+// #region Middleware
 app.use(cors({ origin: "*" }));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -60,9 +61,9 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, ".")));
 app.use(express.static("."));
 app.use("/static", express.static(path.join(__dirname, ".")));
-// Endregion
+// #endregion
 
-// Region Website pages
+// #region Website pages
 (() => {
 	app.get("/", (req, res) => {
 		res.sendFile(path.join(__dirname, "./homepage.html"));
@@ -92,9 +93,9 @@ app.use("/static", express.static(path.join(__dirname, ".")));
 		res.send(reportsPage);
 	});
 })();
-// Endregion
+// #endregion
 
-// Region API Profiles
+// #region API Profiles
 app.get("/api/profiles", (req, res) => {
 	const file = fs.readFileSync('./profiles.json', 'utf-8');
 	const parsed = JSON.parse(file);
@@ -148,7 +149,7 @@ app.post("/api/profiles", (req, res) => {
 		unauth(res, { status: 401, data: "Unauthorized to make this request." });
 	}
 }); // POST create user
-// Endregion
+// #endregion
 
 app.use((req, res, next) => {
   res.status(404).sendFile(path.join(__dirname, './404.html'));
