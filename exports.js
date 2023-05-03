@@ -45,20 +45,3 @@ module.exports.badreq = (res, data) => {
 module.exports.unauth = (res, data) => {
     res.status(401).send(data);
 }
-
-module.exports.authenticateReq = (reqKey, key) => {
-    return (reqKey == key);
-}
-
-/**
- * Validate post request
- * @param {Validator} Validator Validator interface from joi used to validate req.
- * @param {Object} user Object client is trying to post. 
-*/
-module.exports.validateUser = (Validator, user) => {
-    const schema = {
-        username: Validator.string().min(1).required()
-    };
-
-    return Validator.validate(user, schema);
-}

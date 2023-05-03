@@ -1,8 +1,8 @@
 // #region Imports
 const express = require("express");
 const path = require("path");
-const { print, success, notfound, badreq, unauth } = require("./exports");
-const { validateUser, authenticateReq, logTime } = require("./exports");
+const { print, success, notfound, unauth } = require("./exports");
+const { logTime } = require("./exports");
 const dotenv = require("dotenv");
 const bodyParser = require("body-parser");
 const cors = require("cors");
