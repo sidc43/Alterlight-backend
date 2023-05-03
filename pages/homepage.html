@@ -1,15 +1,23 @@
 <!DOCTYPE html>
 <html lang="en" class="no-js">
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Solid Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <meta name="description" content="Falcon Servers, discord server that hosts tournaments for various games, join to participate in events and get rewards">
+  <meta name="keywords" content="falcon, falconservers, serversfalcon">
+  <meta name="google-site-verification" content="yq-PydwWrpUAa-FIK_nNtUjmNjJDH9og1l1HZNlECd8" />
+	<meta content="#50bcbb" data-react-helmet="true" name="theme-color" />
+	 <meta content="https://i.postimg.cc/QxWttYgq/icon.png" property="og:image" />
+  <link rel="canonical" href="https://serversfalcon.com/home/" />
+
+  	<title> Falcon Servers | Home </title>
+    <link rel="shortcut icon" href="https://i.postimg.cc/QxWttYgq/icon.png" type="image/png">
     <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,600" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="../styles/style.css">
 	<script src="https://unpkg.com/animejs@3.0.1/lib/anime.min.js"></script>
     <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
 </head>
@@ -18,10 +26,10 @@
     <label for="menu-icon"></label>
     <nav class="nav">
         <ul class="pt-5">
-            <li><a href="https://serversfalcon.com">Home</a></li>
-            <li><a href="https://serversfalcon.com/about">About</a></li>
-            <li><a href="https://serversfalcon.com/apply">Apply</a></li>
-			<li><a href="https://discord.com/api/oauth2/authorize?client_id=1102302494744399964&redirect_uri=https%3A%2F%2Fserversfalcon.com&response_type=token&scope=identify%20guilds%20email" id="login">Login with Discord</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/premium">Premium</a></li>
+			<li><a href="https://discord.com/api/oauth2/authorize?client_id=1102302494744399964&redirect_uri=https%3A%2F%2Fserversfalcon.com&response_type=token&scope=identify%20guilds%20email" id="login">Login</a></li>
         </ul>
     </nav>
     <div class="body-wrap">
@@ -44,8 +52,7 @@
                 <div class="container">
                     <div class="hero-inner">
 						<div class="hero-copy">
-	                        <h1 class="hero-title mt-0">Landing template for startups</h1>
-	                        <p class="hero-paragraph">Our landing page template works on all devices, so you only have to set it up once, and get beautiful results forever.</p>
+	                        <h1 class="hero-title mt-0">Join a Discord server with a total of 19 users around the world.</p>
 	                        <div class="hero-cta">  <a class="button button-primary" href="#">Join server</a></div>
 						</div>
 						<div class="hero-figure anime-element">
@@ -81,18 +88,16 @@
                                 <div class="pricing-table-inner is-revealing">
                                     <div class="pricing-table-main">
                                         <div class="pricing-table-header pb-24">
-                                            <div class="pricing-table-price"><span class="pricing-table-price-currency h2">$</span><span class="pricing-table-price-amount h1">4.99</span><span class="text-xs">/month</span></div>
+                                            <div class="pricing-table-price"><span class="pricing-table-price-currency1 h2">$</span><span class="pricing-table-price-amount h1">2.99</span><span class="text-xs">/month</span></div>
                                         </div>
-										<div class="pricing-table-features-title text-xs pt-24 pb-24">What you will get</div>
+										<div class="pricing-table-features-title text-xs pt-24 pb-24">Silver</div>
                                         <ul class="pricing-table-features list-reset text-xs">
-                                            <li>
-                                                <span>Exclusive commands on our Discord bot</span>
-                                            </li>
+                                            
                                             <li>
                                                 <span>New themes on our Discord bot</span>
                                             </li>
                                             <li>
-                                                <span>Early access to updated in our game</span>
+                                                <span>Silver supporter role in server</span>
                                             </li>
 											<li>
 												<span>Be a part of play tests</span>
@@ -114,7 +119,7 @@
 					<div class="cta-inner section-inner">
 						<h3 class="section-title mt-0">Still not convinced on buying?</h3>
 						<div class="cta-cta">
-							<a class="button button-primary button-wide-mobile" href="#">Get in touch</a>
+							<a class="button button-primary button-wide-mobile" href="/premium">Learn More</a>
 						</div>
 					</div>
 				</div>
@@ -131,13 +136,13 @@
                     </div>
                     <ul class="footer-links list-reset">
                         <li>
-                            <a href="https://serversfalcon.com/terms" class="flink span a">Terms</a>
+                            <a href="/terms" class="flink span a">Terms</a>
                         </li>
                         <li>
-                            <a href="https://serversfalcon.com/privacy" class="flink span a">Privacy Policy</a>
+                            <a href="/privacy" class="flink span a">Privacy Policy</a>
                         </li>
                         <li>
-                            <a href="https://serversfalcon.com/delete" class="flink span a">Data Deletion</a>
+                            <a href="/delete" class="flink span a">Data Deletion</a>
                         </li>
                     </ul>
                     <ul class="footer-social-links list-reset">
@@ -157,7 +162,9 @@
         </footer>
     </div>
 
-    <script src="dist/js/main.min.js"></script>
+    <script>
+		!function(){window;const e=document.documentElement;if(e.classList.remove("no-js"),e.classList.add("js"),document.body.classList.contains("has-animations")){(window.sr=ScrollReveal()).reveal(".feature, .pricing-table-inner",{duration:600,distance:"20px",easing:"cubic-bezier(0.5, -0.01, 0, 1.005)",origin:"bottom",interval:100}),e.classList.add("anime-ready"),anime.timeline({targets:".hero-figure-box-05"}).add({duration:400,easing:"easeInOutExpo",scaleX:[.05,.05],scaleY:[0,1],perspective:"500px",delay:anime.random(0,400)}).add({duration:400,easing:"easeInOutExpo",scaleX:1}).add({duration:800,rotateY:"-15deg",rotateX:"8deg",rotateZ:"-1deg"}),anime.timeline({targets:".hero-figure-box-06, .hero-figure-box-07"}).add({duration:400,easing:"easeInOutExpo",scaleX:[.05,.05],scaleY:[0,1],perspective:"500px",delay:anime.random(0,400)}).add({duration:400,easing:"easeInOutExpo",scaleX:1}).add({duration:800,rotateZ:"20deg"}),anime({targets:".hero-figure-box-01, .hero-figure-box-02, .hero-figure-box-03, .hero-figure-box-04, .hero-figure-box-08, .hero-figure-box-09, .hero-figure-box-10",duration:anime.random(600,800),delay:anime.random(600,800),rotate:[anime.random(-360,360),function(e){return e.getAttribute("data-rotation")}],scale:[.7,1],opacity:[0,1],easing:"easeInOutExpo"})}}();
+	</script>
     <script>
         window.onload = async () => {
             const fragment = new URLSearchParams(window.location.hash.slice(1));
@@ -185,5 +192,23 @@
             document.getElementById("login").href = "#";
         };
     </script>
+	<style>
+		::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #112031;
+}
+::-webkit-scrollbar-thumb {
+  background: #50bcbb;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #007a78;
+}
+		.pricing-table-price-currency1 {
+    color: #808080;
+}
+	</style>
 </body>
 </html>

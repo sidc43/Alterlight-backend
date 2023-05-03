@@ -3,12 +3,7 @@ const express = require("express");
 const path = require("path");
 const { print, success, notfound, badreq, unauth } = require("./exports");
 const { validateUser, authenticateReq, logTime } = require("./exports");
-const { homePage, aboutPage, applyPage, termsPage } = require("./pages");
-const { privacyPage, deletePage, reportsPage } = require("./pages");
-const StockData = require("./data.json");
-const Validator = require("joi");
 const dotenv = require("dotenv");
-const StringDecoder = require("string_decoder").StringDecoder;
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const fetch = require("node-fetch-commonjs");
@@ -28,7 +23,27 @@ app.get("/profiles.json", (req, res) => {
 	res.redirect(301, '/');
 });
 
-app.get("/homepage.html", (req, res) => {
+app.get("/pages/homepage.html", (req, res) => {
+	res.redirect(301, '/');
+});
+
+app.get("/pages/premium.html", (req, res) => {
+	res.redirect(301, '/');
+});
+
+app.get("/pages/about.html", (req, res) => {
+	res.redirect(301, '/');
+});
+
+app.get("/pages/privacy.html", (req, res) => {
+	res.redirect(301, '/');
+});
+
+app.get("/pages/terms.html", (req, res) => {
+	res.redirect(301, '/');
+});
+
+app.get("/pages/delete.html", (req, res) => {
 	res.redirect(301, '/');
 });
 
@@ -48,7 +63,7 @@ app.get("/pages.js", (req, res) => {
 	res.redirect(301, '/');
 });
 
-app.get("/404.html", (req, res) => {
+app.get("/pages/404.html", (req, res) => {
 	res.redirect(301, '/');
 });
 // #endregion
@@ -66,11 +81,15 @@ app.use("/static", express.static(path.join(__dirname, ".")));
 // #region Website pages
 (() => {
 	app.get("/", (req, res) => {
-		res.sendFile(path.join(__dirname, "./homepage.html"));
+		res.sendFile(path.join(__dirname, "./pages/homepage.html"));
 	});
 
 	app.get("/about", (req, res) => {
-		res.send(aboutPage);
+		res.sendFile(path.join(__dirname, "./pages/about.html"));
+	});
+
+	app.get("/premium", (req, res) => {
+		res.sendFile(path.join(__dirname, "./pages/premium.html"));
 	});
 
 	app.get("/apply", (req, res) => {
@@ -78,19 +97,15 @@ app.use("/static", express.static(path.join(__dirname, ".")));
 	});
 
 	app.get("/terms", (req, res) => {
-		res.send(termsPage);
+		res.sendFile(path.join(__dirname, './pages/terms.html'));
 	});
 
 	app.get("/privacy", (req, res) => {
-		res.send(privacyPage);
+		res.sendFile(path.join(__dirname, './pages/privacy.html'));
 	});
 
 	app.get("/delete", (req, res) => {
-		res.send(deletePage);
-	});
-
-	app.get("/reports", (req, res) => {
-		res.send(reportsPage);
+		res.sendFile(path.join(__dirname, './pages/delete.html'));
 	});
 })();
 // #endregion
@@ -152,7 +167,7 @@ app.post("/api/profiles", (req, res) => {
 // #endregion
 
 app.use((req, res, next) => {
-  res.status(404).sendFile(path.join(__dirname, './404.html'));
+  res.status(404).sendFile(path.join(__dirname, './pages/404.html'));
 });
 
 app.listen(port, (e) => (e ? print(`Error ${e}`) : print(`Running on port ${port}`)));
