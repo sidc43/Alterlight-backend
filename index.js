@@ -115,10 +115,9 @@ app.get("/api/profiles", (req, res) => {
 	const file = fs.readFileSync('./profiles.json', 'utf-8');
 	const parsed = JSON.parse(file);
 	success(res, { status: 200, data: parsed });
-}); // GET all users
+}); 
 
 app.get("/api/profiles/:id", (req, res) => {
-	// Locate user
 	const { id } = req.params;
 	console.log(id);
 
@@ -136,17 +135,16 @@ app.get("/api/profiles/:id", (req, res) => {
 			}
 		}
 	}
-	// Check if user exists
+
 	if (!found)
 		notfound(res, { status: 404, data: "User with this id not found!" });
 
 	success(res, { status: 200, data: [user] });
-}); // GET single user
+}); 
 
 app.post("/api/profiles", (req, res) => {
 	console.log(req.body);
 
-	// Authenticate request
 	if (req.headers['x-api-key'] == APIKEY) {
 		const user = JSON.stringify(req.body);
 
@@ -163,7 +161,7 @@ app.post("/api/profiles", (req, res) => {
 	} else {
 		unauth(res, { status: 401, data: "Unauthorized to make this request." });
 	}
-}); // POST create user
+}); 
 // #endregion
 
 app.use((req, res, next) => {
